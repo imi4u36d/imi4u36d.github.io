@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>知期 ZhiQi | 本地优先的生理周期记录</title>
+  <meta
+    name="description"
+    content="知期 ZhiQi 是一款本地优先的生理周期记录应用，提供周期预测、健康洞察、提醒与小组件，并以内置加密保护隐私。"
+  >
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <div class="bg-orb bg-orb--left" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--right" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="知期首页">
+        <span class="brand__dot"></span>
+        <span class="brand__name">知期 ZhiQi</span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#features">功能</a>
+        <a href="#security">隐私</a>
+        <a href="#workflow">上手</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero__content" data-reveal>
+        <p class="eyebrow">Android MVP · 持续开发中</p>
+        <h1>你的周期日记，先属于你自己。</h1>
+        <p class="hero__desc">
+          知期围绕“本地优先 + 实用洞察”设计：记录经期与日常状态、查看阶段提示、接收敏感词隐藏提醒，并通过本地加密保护隐私。
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="https://github.com/imi4u36d/ganleme" target="_blank" rel="noreferrer">查看源码</a>
+          <a class="btn btn--ghost" href="https://github.com/imi4u36d/ganleme/releases" target="_blank" rel="noreferrer">下载版本</a>
+        </div>
+        <ul class="hero__stats" aria-label="产品摘要">
+          <li>
+            <strong>100%</strong>
+            <span>本地数据存储</span>
+          </li>
+          <li>
+            <strong>21-45 天</strong>
+            <span>周期范围可配置</span>
+          </li>
+          <li>
+            <strong>每日</strong>
+            <span>提醒与桌面小组件</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero__preview" data-reveal>
+        <div class="phone">
+          <div class="phone__header">
+            <p>今天周期提醒</p>
+            <span>卵泡期</span>
+          </div>
+          <div class="ring" role="img" aria-label="周期环形预览"></div>
+          <div class="preview-grid">
+            <article>
+              <h3>记录</h3>
+              <p>流量 / 疼痛 / 情绪 / 睡眠</p>
+            </article>
+            <article>
+              <h3>洞察</h3>
+              <p>最近 30 天趋势分析</p>
+            </article>
+            <article>
+              <h3>提醒</h3>
+              <p>每日定时 + 敏感词隐藏</p>
+            </article>
+            <article>
+              <h3>安全</h3>
+              <p>PIN + 自动锁定</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section container">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">核心功能</p>
+        <h2>不做复杂配置，直接开始记录</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="card" data-reveal>
+          <h3>周期预测与分期提醒</h3>
+          <p>根据最近经期开始日、周期天数与经期天数推算阶段，支持经期、排卵期、黄体期等提醒。</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3>日历记录与指标补充</h3>
+          <p>按日期快速记录同房、流量、疼痛、情绪、睡眠等指标，可在记录不足时引导补充关键数据。</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3>趋势洞察与健康内容</h3>
+          <p>聚合最近 30 天数据，生成记录覆盖率与阶段建议，并提供常见问题与风险信号提示。</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3>每日提醒与桌面小组件</h3>
+          <p>支持定时通知、敏感词隐藏，以及桌面展示“今日周期提醒”，减少打开 App 的负担。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="security" class="section container">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">隐私与安全</p>
+        <h2>尽量把敏感信息留在你的设备里</h2>
+      </div>
+      <div class="security-grid">
+        <article class="card" data-reveal>
+          <h3>本地加密数据库</h3>
+          <p>使用 SQLCipher + Room 存储记录数据，数据库密钥由本地安全存储生成并保管。</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3>解锁保护</h3>
+          <p>支持 4-6 位数字密码，后台停留超过 5 分钟自动锁定，降低他人误触查看风险。</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3>备份可控</h3>
+          <p>可导出/导入本地 JSON 备份。当前不做强制账号体系，不默认上传云端。</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3>通知隐私模式</h3>
+          <p>提醒文案可隐藏“经期/排卵”等敏感词，只保留通用提示，减少锁屏暴露。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="workflow" class="section container">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">快速上手</p>
+        <h2>3 步建立稳定记录习惯</h2>
+      </div>
+      <ol class="steps">
+        <li class="card" data-reveal>
+          <span class="step-index">01</span>
+          <h3>完成周期基础设置</h3>
+          <p>录入最近一次经期开始日、周期天数（21-45）和经期天数（2-10）。</p>
+        </li>
+        <li class="card" data-reveal>
+          <span class="step-index">02</span>
+          <h3>每天记录 1-2 项核心指标</h3>
+          <p>优先记录流量、疼痛、情绪、睡眠，数据越连续，预测范围越稳定。</p>
+        </li>
+        <li class="card" data-reveal>
+          <span class="step-index">03</span>
+          <h3>每周查看一次趋势</h3>
+          <p>在洞察页观察变化并调整作息，出现异常信号时优先线下就医。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="faq" class="section container">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">FAQ</p>
+        <h2>你可能关心的问题</h2>
+      </div>
+      <div class="faq-list">
+        <details class="card" data-reveal>
+          <summary>知期的数据会自动上传吗？</summary>
+          <p>默认不会。当前版本以本地模式为主，数据保存在设备本地。</p>
+        </details>
+        <details class="card" data-reveal>
+          <summary>预测一定准确吗？</summary>
+          <p>预测基于最近经期开始日、周期/经期设置和历史记录。漏记或周期波动较大时，预测范围会扩大。</p>
+        </details>
+        <details class="card" data-reveal>
+          <summary>如何迁移到新手机？</summary>
+          <p>先在旧设备导出备份文件，再在新设备导入即可恢复记录、指标和周期设置。</p>
+        </details>
+        <details class="card" data-reveal>
+          <summary>项目是否开源？</summary>
+          <p>是，采用 MIT License。欢迎提交 Issue 或 PR 一起完善。</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> 知期 ZhiQi</p>
+      <p>MIT License · <a href="https://github.com/imi4u36d/ganleme" target="_blank" rel="noreferrer">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
