@@ -3,185 +3,285 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>知期 ZhiQi | 本地优先的生理周期记录</title>
+  <title>JianDou 煎豆 | 面向短剧生产的 AI 文本驱动视频生成平台</title>
   <meta
     name="description"
-    content="知期 ZhiQi 是一款本地优先的生理周期记录应用，提供周期预测、健康洞察、提醒与小组件，并以内置加密保护隐私。"
+    content="JianDou 煎豆是一套面向短剧内容生产的 AI 文本驱动视频生成平台，支持长文本输入、任务编排、异步执行、统一模型接入与结果追踪。"
   >
+  <meta name="theme-color" content="#f3eadf">
   <link rel="stylesheet" href="./styles.css">
   <script defer src="./script.js"></script>
 </head>
 <body>
-  <div class="bg-orb bg-orb--left" aria-hidden="true"></div>
-  <div class="bg-orb bg-orb--right" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="halo halo--amber" aria-hidden="true"></div>
+  <div class="halo halo--teal" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="知期首页">
-        <span class="brand__dot"></span>
-        <span class="brand__name">知期 ZhiQi</span>
+      <a class="brand" href="#top" aria-label="JianDou 首页">
+        <span class="brand__mark">JD</span>
+        <span class="brand__text">
+          <strong>JianDou</strong>
+          <span>煎豆</span>
+        </span>
       </a>
       <nav class="site-nav" aria-label="主导航">
-        <a href="#features">功能</a>
-        <a href="#security">隐私</a>
-        <a href="#workflow">上手</a>
+        <a href="#capability">能力</a>
+        <a href="#pipeline">流程</a>
+        <a href="#architecture">架构</a>
+        <a href="#scenarios">场景</a>
         <a href="#faq">FAQ</a>
       </nav>
+      <a class="nav-cta" href="https://github.com/imi4u36d/JianDou" target="_blank" rel="noreferrer">GitHub</a>
     </div>
   </header>
 
   <main id="top">
     <section class="hero container">
-      <div class="hero__content" data-reveal>
-        <p class="eyebrow">Android MVP · 持续开发中</p>
-        <h1>你的周期日记，先属于你自己。</h1>
+      <div class="hero__copy" data-reveal>
+        <p class="eyebrow">AI Text-to-Video Orchestration Platform</p>
+        <h1>把长文本内容，变成可追踪、可调度、可批量执行的视频生产流水线。</h1>
         <p class="hero__desc">
-          知期围绕“本地优先 + 实用洞察”设计：记录经期与日常状态、查看阶段提示、接收敏感词隐藏提醒，并通过本地加密保护隐私。
+          JianDou 面向短剧与叙事型内容生产，把 TXT 输入、文本分析、创意提示词、视频生成、任务追踪和结果回传收束为一条统一任务链路。
+          它不是单次提示词试错工具，而是更接近生产系统的 AI 视频编排平台。
         </p>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="https://github.com/imi4u36d/ganleme" target="_blank" rel="noreferrer">查看源码</a>
-          <a class="btn btn--ghost" href="https://github.com/imi4u36d/ganleme/releases" target="_blank" rel="noreferrer">下载版本</a>
+          <a class="btn btn--primary" href="https://github.com/imi4u36d/JianDou" target="_blank" rel="noreferrer">查看源码</a>
+          <a class="btn btn--ghost" href="https://github.com/imi4u36d/JianDou/tree/main/docs" target="_blank" rel="noreferrer">阅读文档</a>
         </div>
-        <ul class="hero__stats" aria-label="产品摘要">
+        <ul class="hero__stats" aria-label="关键指标">
           <li>
-            <strong>100%</strong>
-            <span>本地数据存储</span>
+            <strong>TXT / 直输</strong>
+            <span>支持文本文件上传与粘贴输入</span>
           </li>
           <li>
-            <strong>21-45 天</strong>
-            <span>周期范围可配置</span>
+            <strong>Task Trace</strong>
+            <span>完整状态、日志与模型调用追踪</span>
           </li>
           <li>
-            <strong>每日</strong>
-            <span>提醒与桌面小组件</span>
+            <strong>Web + API + Worker</strong>
+            <span>前后端分离与异步任务执行</span>
           </li>
         </ul>
       </div>
 
-      <div class="hero__preview" data-reveal>
-        <div class="phone">
-          <div class="phone__header">
-            <p>今天周期提醒</p>
-            <span>卵泡期</span>
+      <div class="hero__stage" data-reveal>
+        <div class="stage-card stage-card--primary">
+          <div class="stage-card__top">
+            <span>Task Runtime</span>
+            <strong>Generation Flow</strong>
           </div>
-          <div class="ring" role="img" aria-label="周期环形预览"></div>
-          <div class="preview-grid">
-            <article>
-              <h3>记录</h3>
-              <p>流量 / 疼痛 / 情绪 / 睡眠</p>
-            </article>
-            <article>
-              <h3>洞察</h3>
-              <p>最近 30 天趋势分析</p>
-            </article>
-            <article>
-              <h3>提醒</h3>
-              <p>每日定时 + 敏感词隐藏</p>
-            </article>
-            <article>
-              <h3>安全</h3>
-              <p>PIN + 自动锁定</p>
-            </article>
-          </div>
+          <ol class="task-flow" aria-label="任务状态流">
+            <li><span>PENDING</span><em>等待进入队列</em></li>
+            <li><span>ANALYZING</span><em>文本理解与结构抽取</em></li>
+            <li><span>PLANNING</span><em>创意提示词与镜头规划</em></li>
+            <li><span>RENDERING</span><em>视频模型执行与结果写回</em></li>
+            <li><span>COMPLETED</span><em>产物、日志、追踪统一沉淀</em></li>
+          </ol>
+        </div>
+        <div class="stage-grid">
+          <article class="stage-card">
+            <span class="stage-kicker">INPUT</span>
+            <h2>长文本接入</h2>
+            <p>支持小说、剧情梗概、脚本片段等文本输入，并为大文本拆分与异步处理预留能力。</p>
+          </article>
+          <article class="stage-card">
+            <span class="stage-kicker">CATALOG</span>
+            <h2>模型统一目录</h2>
+            <p>通过统一生成接口管理模型、尺寸、时长与能力探测，为快速切换模型做准备。</p>
+          </article>
+          <article class="stage-card">
+            <span class="stage-kicker">OPS</span>
+            <h2>可运维任务面板</h2>
+            <p>任务详情、状态历史、追踪事件、模型调用记录与批量管理接口全部可查。</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="features" class="section container">
+    <section id="capability" class="section container">
       <div class="section__head" data-reveal>
-        <p class="eyebrow">核心功能</p>
-        <h2>不做复杂配置，直接开始记录</h2>
+        <p class="eyebrow">Capability Matrix</p>
+        <h2>围绕“长文本转视频生产”搭的一整套执行能力</h2>
       </div>
-      <div class="feature-grid">
-        <article class="card" data-reveal>
-          <h3>周期预测与分期提醒</h3>
-          <p>根据最近经期开始日、周期天数与经期天数推算阶段，支持经期、排卵期、黄体期等提醒。</p>
+      <div class="cards cards--three">
+        <article class="card card--feature" data-reveal>
+          <p class="card__index">01</p>
+          <h3>统一任务创建</h3>
+          <p>在一个界面中配置标题、画幅、时长、模型、创意提示词与原始文本，支持 TXT 上传和直接粘贴。</p>
         </article>
-        <article class="card" data-reveal>
-          <h3>日历记录与指标补充</h3>
-          <p>按日期快速记录同房、流量、疼痛、情绪、睡眠等指标，可在记录不足时引导补充关键数据。</p>
+        <article class="card card--feature" data-reveal>
+          <p class="card__index">02</p>
+          <h3>异步状态机</h3>
+          <p>从创建到渲染完成的每个阶段都有明确状态，支持暂停、继续、重试、终止与失败恢复。</p>
         </article>
-        <article class="card" data-reveal>
-          <h3>趋势洞察与健康内容</h3>
-          <p>聚合最近 30 天数据，生成记录覆盖率与阶段建议，并提供常见问题与风险信号提示。</p>
+        <article class="card card--feature" data-reveal>
+          <p class="card__index">03</p>
+          <h3>统一生成接口</h3>
+          <p>通过 `/api/v2/generation/runs` 抽象 image、video、script、probe 等生成类型，减少模型接入耦合。</p>
         </article>
-        <article class="card" data-reveal>
-          <h3>每日提醒与桌面小组件</h3>
-          <p>支持定时通知、敏感词隐藏，以及桌面展示“今日周期提醒”，减少打开 App 的负担。</p>
+        <article class="card card--feature" data-reveal>
+          <p class="card__index">04</p>
+          <h3>追踪与回溯</h3>
+          <p>任务 trace、状态历史、结果列表、素材列表、系统日志和模型调用记录，方便问题定位与质量复盘。</p>
+        </article>
+        <article class="card card--feature" data-reveal>
+          <p class="card__index">05</p>
+          <h3>本地化运行</h3>
+          <p>前端、FastAPI、Worker、MySQL、Redis 与本地文件存储可独立启动，适合快速搭建内网生产环境。</p>
+        </article>
+        <article class="card card--feature" data-reveal>
+          <p class="card__index">06</p>
+          <h3>面向升级的接口边界</h3>
+          <p>文档中已规划模型快速切换与插件化接入，为多模型扩容和大文本分批生成留好了演进空间。</p>
         </article>
       </div>
     </section>
 
-    <section id="security" class="section container">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow">隐私与安全</p>
-        <h2>尽量把敏感信息留在你的设备里</h2>
+    <section id="pipeline" class="section section--accent">
+      <div class="container pipeline-wrap">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Pipeline</p>
+          <h2>从输入文本到输出视频，不靠手工拼流程</h2>
+        </div>
+        <div class="pipeline-grid">
+          <article class="pipeline-step" data-reveal>
+            <span>Step 1</span>
+            <h3>采集输入</h3>
+            <p>上传 TXT 或直接输入文本，同时确定比例、时长、文案风格和目标模型。</p>
+          </article>
+          <article class="pipeline-step" data-reveal>
+            <span>Step 2</span>
+            <h3>分析与规划</h3>
+            <p>先做文本理解，再生成创意提示词与镜头规划，减少直接调用视频模型的盲打成本。</p>
+          </article>
+          <article class="pipeline-step" data-reveal>
+            <span>Step 3</span>
+            <h3>异步渲染</h3>
+            <p>任务被投递到队列，由 Worker 执行生成任务，前台只负责追踪和管理，不阻塞页面交互。</p>
+          </article>
+          <article class="pipeline-step" data-reveal>
+            <span>Step 4</span>
+            <h3>结果沉淀</h3>
+            <p>生成产物、过程日志、状态变化和模型调用结果统一落库和落盘，便于复用、审计和排查。</p>
+          </article>
+        </div>
       </div>
-      <div class="security-grid">
-        <article class="card" data-reveal>
-          <h3>本地加密数据库</h3>
-          <p>使用 SQLCipher + Room 存储记录数据，数据库密钥由本地安全存储生成并保管。</p>
+    </section>
+
+    <section id="architecture" class="section container">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">Architecture</p>
+        <h2>前后端分离 + Worker 解耦，让视频生成真正进入任务系统</h2>
+      </div>
+      <div class="architecture-layout">
+        <article class="arch-panel arch-panel--wide" data-reveal>
+          <p class="arch-label">Core Stack</p>
+          <div class="arch-matrix">
+            <div>
+              <h3>apps/web</h3>
+              <p>Vue 3 + Vite 前端，承担任务创建、列表、详情、日志和运行态可视化。</p>
+            </div>
+            <div>
+              <h3>apps/api</h3>
+              <p>FastAPI API 网关，对外暴露 `/api/v2`，管理任务、生成、上传和管理端接口。</p>
+            </div>
+            <div>
+              <h3>apps/worker</h3>
+              <p>消费 Redis 队列，执行分析、规划、渲染等异步阶段，把高耗时任务从请求线程剥离。</p>
+            </div>
+            <div>
+              <h3>packages/*</h3>
+              <p>AI 编排、任务流水线、数据库模型、存储封装与公共 schema 独立沉淀，便于后续扩展。</p>
+            </div>
+          </div>
         </article>
-        <article class="card" data-reveal>
-          <h3>解锁保护</h3>
-          <p>支持 4-6 位数字密码，后台停留超过 5 分钟自动锁定，降低他人误触查看风险。</p>
+        <article class="arch-panel" data-reveal>
+          <p class="arch-label">Data Plane</p>
+          <h3>MySQL + Redis + Local Storage</h3>
+          <p>任务元数据写入 MySQL，队列交给 Redis，上传文件和生成结果落在本地存储目录。</p>
         </article>
-        <article class="card" data-reveal>
-          <h3>备份可控</h3>
-          <p>可导出/导入本地 JSON 备份。当前不做强制账号体系，不默认上传云端。</p>
-        </article>
-        <article class="card" data-reveal>
-          <h3>通知隐私模式</h3>
-          <p>提醒文案可隐藏“经期/排卵”等敏感词，只保留通用提示，减少锁屏暴露。</p>
+        <article class="arch-panel" data-reveal>
+          <p class="arch-label">Config</p>
+          <h3>app.toml 与环境变量覆盖</h3>
+          <p>支持通过 `config/app.toml` 和 `JIANDOU_*` 环境变量管理模型 Key、数据库与运行参数。</p>
         </article>
       </div>
     </section>
 
-    <section id="workflow" class="section container">
+    <section id="scenarios" class="section container">
       <div class="section__head" data-reveal>
-        <p class="eyebrow">快速上手</p>
-        <h2>3 步建立稳定记录习惯</h2>
+        <p class="eyebrow">Scenarios</p>
+        <h2>不是泛用 Demo，而是明确对准叙事型内容生产</h2>
       </div>
-      <ol class="steps">
-        <li class="card" data-reveal>
-          <span class="step-index">01</span>
-          <h3>完成周期基础设置</h3>
-          <p>录入最近一次经期开始日、周期天数（21-45）和经期天数（2-10）。</p>
-        </li>
-        <li class="card" data-reveal>
-          <span class="step-index">02</span>
-          <h3>每天记录 1-2 项核心指标</h3>
-          <p>优先记录流量、疼痛、情绪、睡眠，数据越连续，预测范围越稳定。</p>
-        </li>
-        <li class="card" data-reveal>
-          <span class="step-index">03</span>
-          <h3>每周查看一次趋势</h3>
-          <p>在洞察页观察变化并调整作息，出现异常信号时优先线下就医。</p>
-        </li>
-      </ol>
+      <div class="cards cards--three">
+        <article class="card" data-reveal>
+          <h3>短剧预告片生成</h3>
+          <p>输入剧情梗概或章节内容，统一配置情绪节奏、悬念与转场策略，再交给视频模型执行。</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3>长篇小说分镜草案</h3>
+          <p>文档中已经明确提出“全书结构抽取 → 分批分镜生成 → 一致性合并”的可行路线，适合长文本工业化处理。</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3>多模型快速试产</h3>
+          <p>统一生成目录让模型切换与能力探测变得可管理，适合团队快速比较不同供应商与配置组合。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container split-callout">
+        <div data-reveal>
+          <p class="eyebrow">Roadmap</p>
+          <h2>当前已具备生产雏形，下一步会更偏向平台化能力。</h2>
+          <p>
+            已完成文本任务创建、状态追踪、统一生成接口、模型目录与用量查询、管理端批量操作接口。
+            文档同时明确提出模型快速切换、插件化 AI 模型接入以及大文本拆分异步组装等下一阶段方向。
+          </p>
+        </div>
+        <div class="milestones" data-reveal>
+          <article>
+            <span>Now</span>
+            <strong>任务编排闭环</strong>
+            <p>创建、执行、追踪、结果沉淀已经打通。</p>
+          </article>
+          <article>
+            <span>Next</span>
+            <strong>模型插件化</strong>
+            <p>降低新模型接入成本，缩短试错与切换路径。</p>
+          </article>
+          <article>
+            <span>Later</span>
+            <strong>超长文本工业化</strong>
+            <p>把大文本拆分、多批生成和一致性校验组合成稳定流水线。</p>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section id="faq" class="section container">
       <div class="section__head" data-reveal>
         <p class="eyebrow">FAQ</p>
-        <h2>你可能关心的问题</h2>
+        <h2>部署、使用与项目边界</h2>
       </div>
       <div class="faq-list">
-        <details class="card" data-reveal>
-          <summary>知期的数据会自动上传吗？</summary>
-          <p>默认不会。当前版本以本地模式为主，数据保存在设备本地。</p>
+        <details class="faq-item card" data-reveal open>
+          <summary>JianDou 当前更适合什么团队？</summary>
+          <p>更适合已经在做短剧、剧情预告、章节拆解或 AI 视频试产的团队，需要的是任务系统，而不是单次生成玩具。</p>
         </details>
-        <details class="card" data-reveal>
-          <summary>预测一定准确吗？</summary>
-          <p>预测基于最近经期开始日、周期/经期设置和历史记录。漏记或周期波动较大时，预测范围会扩大。</p>
+        <details class="faq-item card" data-reveal>
+          <summary>当前部署方式是什么？</summary>
+          <p>文档支持 Docker Compose 和本地直跑两种模式。项目说明里同时提示：当前阶段更建议本地开发模式启动，稳定后再发 Docker 版本。</p>
         </details>
-        <details class="card" data-reveal>
-          <summary>如何迁移到新手机？</summary>
-          <p>先在旧设备导出备份文件，再在新设备导入即可恢复记录、指标和周期设置。</p>
+        <details class="faq-item card" data-reveal>
+          <summary>是否支持任务级排错？</summary>
+          <p>支持。任务详情、trace、状态历史、模型调用记录、日志和结果列表都能帮助定位问题与回溯过程。</p>
         </details>
-        <details class="card" data-reveal>
-          <summary>项目是否开源？</summary>
-          <p>是，采用 MIT License。欢迎提交 Issue 或 PR 一起完善。</p>
+        <details class="faq-item card" data-reveal>
+          <summary>是否已经做成完整 SaaS？</summary>
+          <p>还没有。当前更准确的定位是一个面向内容生产场景的 AI 视频生成平台工程基础盘，已经具备持续扩展能力。</p>
         </details>
       </div>
     </section>
@@ -189,8 +289,16 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>© <span id="year"></span> 知期 ZhiQi</p>
-      <p>MIT License · <a href="https://github.com/imi4u36d/ganleme" target="_blank" rel="noreferrer">GitHub</a></p>
+      <div>
+        <p class="footer-title">JianDou 煎豆</p>
+        <p>面向短剧生产的 AI 文本驱动视频生成平台</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/imi4u36d/JianDou" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/imi4u36d/JianDou/tree/main/docs" target="_blank" rel="noreferrer">Docs</a>
+        <span>QQ 交流群：1090387362</span>
+      </div>
+      <p>© <span id="year"></span> JianDou</p>
     </div>
   </footer>
 </body>
